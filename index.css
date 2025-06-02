@@ -1,0 +1,114 @@
+/* Adicionando estilos globais para melhorar acessibilidade */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --text-color: #1f2937;
+  --text-light: #6b7280;
+  --background-light: #f9fafb;
+  --focus-ring: 0 0 0 3px rgba(37, 99, 235, 0.5);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Melhorando visibilidade do foco para acessibilidade */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Aumentando contraste para melhor legibilidade */
+.text-gray-600 {
+  color: #4b5563;
+}
+
+/* Melhorando tamanho de fonte para leitura em dispositivos móveis */
+@media (max-width: 640px) {
+  body {
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Melhorando espaçamento para toque em dispositivos móveis */
+@media (max-width: 640px) {
+  button, 
+  a.button,
+  input[type="submit"] {
+    min-height: 44px;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+  }
+  
+  .nav-link {
+    padding: 0.75rem 0;
+  }
+}
+
+/* Adicionando transições suaves */
+a, button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Melhorando contraste de links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Melhorando visibilidade de botões */
+.btn {
+  @apply font-medium rounded-lg;
+  padding: 0.5rem 1rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Melhorando espaçamento de seções */
+section {
+  padding: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 4rem 0;
+  }
+}
+
+/* Melhorando contraste de texto sobre fundos coloridos */
+.bg-blue-600 {
+  background-color: #2563eb;
+}
+
+.bg-blue-600 .text-white {
+  color: #ffffff;
+}
